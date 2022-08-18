@@ -34,15 +34,22 @@ function App() {
   const history = useHistory()
 
   React.useEffect(() => {
+    console.log(document.cookie, 'cookie1')
+   },[history])
+
+  React.useEffect(() => {
     
+    console.log('loggedIn', loggedIn)
     api.getUserData()
     .then((res) => {
+      console.log(res, 'resultUser')
       setLoggedIn(true);
       setCurrentUser(res.data)
       setEmail(res.data.email);
       history.push('/');
     })
     .catch((err) => {
+      console.log('unautoriz')
       console.log(err);
     })
 
@@ -53,8 +60,28 @@ function App() {
       .catch((err) => {
         console.log(err);
       })
+
+
   },[history, loggedIn])
-  
+
+  // React.useEffect(() => {
+  //   if (localStorage.getItem('jwt')) {
+  //     const jwt = localStorage.getItem('jwt')
+  //     auth.checkToken(jwt)
+  //       .then((res) => {
+  //         console.log('здесь')
+  //         setEmail(res.data.email)
+  //         setLoggedIn(true)
+  //         history.push('/')
+  //       })
+  //       .catch((err) => {
+  //         console.log('нездесь')
+  //         console.log(err)
+  //         history.push('/sign-in')
+  //       })
+  //   }
+  // },[history])
+
   //открытие/закрытие попапов
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
@@ -106,6 +133,7 @@ function App() {
     setRenderLoading(true)
     api.chengeAvatar(avatar)
       .then((data) => {
+        console.log(data, 'avatar')
         setCurrentUser({...currentUser, avatar: data.data.avatar})
         closeAllPopups()
       })
@@ -180,11 +208,15 @@ function App() {
   function handleLogin ({ email, password }) {
     return auth.authorize(password, email)
         .then((res) => {
+          console.log(res, 'datalogin')
+            console.log(res)
+            console.log('вошел')
             setEmail(email)
             setLoggedIn(true)
             history.push('/')
         })
         .catch((err) => {
+          console.log(err, '0err')
           handleInfoToolTipPopupOpen(false)
         })
   }
@@ -200,6 +232,9 @@ function App() {
          console.log(err);
       })
   }
+  // function handleSignOut() {
+  //    console.log('err');
+  // }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

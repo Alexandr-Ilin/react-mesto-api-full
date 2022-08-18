@@ -102,6 +102,7 @@ class Api {
 
   _checkResponse(res) {
     if (res.ok) {
+      console.log(res, 'resUser')
       return res.json();
     }
     return Promise.reject(`Ошибка: ${res.status}`);
@@ -109,8 +110,10 @@ class Api {
 }
 
 export const api = new Api({
+  // baseUrl: 'https://api.ilin.nomoredomains.sbs',
   baseUrl: BASE_URL,
   headers: {
+    // authorization: 'a251447a-ca8d-48d6-88cb-4cedc8f5baae',
     'Content-Type': 'application/json'
   }
 });
