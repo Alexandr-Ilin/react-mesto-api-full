@@ -11,12 +11,13 @@ router.post('/signup', validationCreateUser, createUser);
 
 router.use(auth);
 
+router.use('/users', userRouter);
+router.use('/cards', cardRouter);
+
 router.delete('/exit', (req, res) => {
   res.clearCookie('jwt').send({message: "goodbye"});
 });
 
-router.use('/users', userRouter);
-router.use('/cards', cardRouter);
 router.use('*', (req, res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });
