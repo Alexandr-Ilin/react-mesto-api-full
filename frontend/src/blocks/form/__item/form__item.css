@@ -1,0 +1,39 @@
+.form__item {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  /* margin-bottom: 30px; */
+  border: none;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  /*переполнение*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form__item:focus,
+ :active {
+  outline: none;
+}
+
+.form__item::placeholder {
+  color: #000;
+}
+
+
+/* .form__item:last-of-type {
+   margin-bottom: 48px;
+} */
+
+
+/* @media screen and (max-width: 940px) {
+  .form__item:last-of-type {
+    margin-bottom: 45px;
+  }
+} */

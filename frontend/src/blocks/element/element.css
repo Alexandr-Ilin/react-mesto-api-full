@@ -1,0 +1,9 @@
+.element {
+  width: 282px;
+  /* height: 361px; */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-block: 0;
+  margin-inline: 0;
+}

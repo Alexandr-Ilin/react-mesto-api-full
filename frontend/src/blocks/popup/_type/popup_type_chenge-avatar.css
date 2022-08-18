@@ -1,0 +1,6 @@
+.popup_type_chenge-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0, .5);
+}

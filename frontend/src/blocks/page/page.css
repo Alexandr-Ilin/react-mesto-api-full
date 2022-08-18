@@ -1,0 +1,21 @@
+.page {
+  font-family: 'inter', 'arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  align-items: center;
+  padding: 45px 19px 60px;
+  background: black;
+  /* height: 100%; */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 940px) {
+  .page {
+    padding: 28px 19px 36px;
+  }
+}

@@ -1,0 +1,12 @@
+.profile__edit-info {
+  display: flex;
+  align-items: center;
+  /*16px от базовой линии*/
+  margin-bottom: 9px;
+}
+
+@media screen and (max-width: 940px) {
+  .profile__edit-info {
+    margin-bottom: 7px;
+  }
+}

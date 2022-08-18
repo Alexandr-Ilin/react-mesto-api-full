@@ -1,0 +1,20 @@
+.profile__about-self {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin-block: 0;
+  /*переполнение*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 940px) {
+  .profile__about-self {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+  }
+}

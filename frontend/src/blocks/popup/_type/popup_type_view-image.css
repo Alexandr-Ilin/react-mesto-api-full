@@ -1,0 +1,6 @@
+.popup_type_view-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0, .9);
+}

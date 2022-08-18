@@ -1,0 +1,16 @@
+.header__context-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 641px) {
+  .header__context-container {
+    display: none;
+    width: 320px;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(84, 84, 84, .7);
+    padding: 40px 0;
+    margin-bottom: 27px;
+  }
+}

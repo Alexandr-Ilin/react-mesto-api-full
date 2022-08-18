@@ -1,0 +1,13 @@
+.auth__form-container {
+  width: 358px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 641px) {
+  .auth__form-container {
+    width: 266px;
+  }
+}

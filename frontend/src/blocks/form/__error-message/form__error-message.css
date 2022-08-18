@@ -1,0 +1,23 @@
+.form__error-message {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  /* line-height: 15px; */
+  line-height: 1;
+  color: #FF0000;
+  display: block;
+  min-height: 30px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+
+.form__error-message:last-of-type {
+  min-height: 48px;
+}
+
+@media screen and (max-width: 940px) {
+  .form__error-message:last-of-type {
+    min-height: 45px;
+  }
+}

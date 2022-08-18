@@ -1,0 +1,16 @@
+.elements-section {
+  width: 100%;
+  max-width: 880px;
+}
+
+@media screen and (max-width: 940px) {
+  .elements-section {
+    max-width: 581px;
+  }
+}
+
+@media screen and (max-width: 641px) {
+  .elements-section {
+    max-width: 282px;
+  }
+}

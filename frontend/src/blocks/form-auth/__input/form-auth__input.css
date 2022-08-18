@@ -1,0 +1,36 @@
+.form-auth__input {
+  background-color: transparent;
+  width: 100%;
+  padding: 0;
+  border: none;
+  padding-bottom: 9px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 16.94px;
+  font-weight: 500;
+  color: #fff;
+  /*переполнение*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form-auth__input:last-of-type {
+  margin-bottom: 216px;
+}
+
+.form-auth__input:focus,
+ :active {
+  outline: none;
+}
+
+.form-auth__input::placeholder {
+  color: #ccc;
+}
+
+@media screen and (max-width: 641px) {
+  .form-auth__input:last-of-type {
+    margin-bottom: 173px;
+  }
+}

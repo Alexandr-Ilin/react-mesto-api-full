@@ -1,0 +1,20 @@
+.header__email {
+  display: inline-block;
+  margin-block: 0;
+  margin-right: 24px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 266px;
+  /*переполнение*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 641px) {
+  .header__email {
+    margin: 0 0 18px;
+  }
+}
