@@ -102,7 +102,6 @@ class Api {
 
   _checkResponse(res) {
     if (res.ok) {
-      console.log(res, 'resUser')
       return res.json();
     }
     return Promise.reject(`Ошибка: ${res.status}`);
