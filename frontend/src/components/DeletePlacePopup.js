@@ -1,7 +1,7 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function DeletePlacePopup({isOpen, card, onClose, onDelete, isRenderLoading} ) {
+function DeletePlacePopup({ isOpen, card, onClose, onDelete, isRenderLoading}) {
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,8 +15,7 @@ function DeletePlacePopup({isOpen, card, onClose, onDelete, isRenderLoading} ) {
       isOpen={isOpen}
       onClose={onClose}
       buttonText={isRenderLoading ? 'Удаление...' : 'Да'}
-      onSubmit={handleSubmit}
-      >
+      onSubmit={handleSubmit}>
     </PopupWithForm>
   )
 }
