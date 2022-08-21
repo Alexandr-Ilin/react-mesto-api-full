@@ -31,7 +31,7 @@ const validationUpdateAvatar = celebrate({
 const validationGetUserById = celebrate({
   params: Joi.object().keys({
     userId: Joi.string()
-      .alphanum()
+      .hex()
       .length(24),
   }),
 });
@@ -39,7 +39,7 @@ const validationGetUserById = celebrate({
 const validationGetCardById = celebrate({
   params: Joi.object().keys({
     cardId: Joi.string()
-      .alphanum()
+      .hex()
       .length(24),
   }),
 });
