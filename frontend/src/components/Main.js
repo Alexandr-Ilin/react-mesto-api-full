@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Сard';
-import { CurrentUserContext } from '../context/CurrentUserContext';
+import CurrentUserContext from '../context/CurrentUserContext';
 
 function Main({
   onAddPlace, onCardClick, onEditAvatar, onEditProfile, cards, onCardLike, onCardDelete,

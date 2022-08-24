@@ -4,8 +4,8 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import ImagePopup from './ImagePopup';
-import { CurrentUserContext } from '../context/CurrentUserContext';
-import { api } from '../utils/api';
+import CurrentUserContext from '../context/CurrentUserContext';
+import api from '../utils/api';
 import * as auth from '../utils/auth';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
@@ -23,7 +23,7 @@ function App() {
   const [isDeletePlacePopupOpen, setIsDeletePlacePopupOpen] = React.useState({
     isOpen: false, card: {},
   });
-  const [isInfoTooltipPopupOpen, setIsInfoToolTipPopupOpen] = React.useState({ isOpen: false, result: '' })
+  const [isInfoTooltipPopupOpen, setIsInfoToolTipPopupOpen] = React.useState({ isOpen: false, result: '' });
   const [selectedCard, setSelectedCard] = React.useState({ isOpen: false, card: {} });
 
   const [currentUser, setCurrentUser] = React.useState({});
@@ -159,7 +159,7 @@ function App() {
       })
       .finally(() => {
         setRenderLoading(false);
-      })
+      });
   }
 
   function handleInfoToolTipPopupOpen(result) {
@@ -180,19 +180,19 @@ function App() {
 
   function handleLogin({ email, password }) {
     return auth.authorize(password, email)
-      .then((res) => {
+      .then(() => {
         setEmail(email);
         setLoggedIn(true);
         history.push('/');
       })
-      .catch((err) => {
+      .catch(() => {
         handleInfoToolTipPopupOpen(false);
       });
   }
 
   function handleSignOut() {
     auth.exitUserProfile()
-      .then((res) => {
+      .then(() => {
         setLoggedIn(false);
         setEmail('');
         history.push('/sign-in');
@@ -230,7 +230,6 @@ function App() {
             handleRegister={handleRegister}
           />
         </Route>
-
 
         <ProtectedRoute
           exact path='/'
