@@ -1,17 +1,18 @@
-import React from 'react'
-import logoPath from '../images/logo1.svg'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import logoPath from '../images/logo1.svg';
+import { Link } from 'react-router-dom';
 
-function Header({loggedIn, headerLinkPath, headerLinkText, email, buttonText, signOut}) {
-  const [isOpenMenu, setIsOpenMenu] = React.useState(false)
+function Header({
+  loggedIn, headerLinkPath, headerLinkText, email, buttonText, signOut,
+}) {
+  const [isOpenMenu, setIsOpenMenu] = React.useState(false);
 
   function handleClickMenu() {
-    setIsOpenMenu(!isOpenMenu)
+    setIsOpenMenu(!isOpenMenu);
   }
 
   return (
     <header className='header'>
-      
       <div className='header__with-logo'>
         <img src={logoPath} alt="Логотип проекта Место" className="header__logo"/>
         {!loggedIn && <Link className="header__link" to={headerLinkPath}>{headerLinkText}</Link>}
@@ -26,8 +27,7 @@ function Header({loggedIn, headerLinkPath, headerLinkText, email, buttonText, si
       )}
 
     </header>
-  )
+  );
 }
-  
+
 export default Header;
-// &#8801

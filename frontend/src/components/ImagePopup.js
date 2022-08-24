@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Popup from './Popup';
 
 function ImagePopup(props) {
@@ -7,7 +7,7 @@ function ImagePopup(props) {
       name='view-image'
       container='view-container'
       isOpen={props.data.isOpen}
-      onClose={props.onClose} 
+      onClose={props.onClose}
     >
       <figure className="element-view">
         <img src={props.data.card.link} alt={props.data.card.name} className="element-view__image"/>
@@ -16,7 +16,7 @@ function ImagePopup(props) {
         </figcaption>
       </figure>
     </Popup>
-  )
+  );
 }
 
 export default ImagePopup;

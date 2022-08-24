@@ -1,12 +1,13 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function DeletePlacePopup({isOpen, card, onClose, onDelete, isRenderLoading} ) {
-
+function DeletePlacePopup({
+  isOpen, card, onClose, onDelete, isRenderLoading,
+}) {
   function handleSubmit(e) {
     e.preventDefault();
     onDelete(card);
-  } 
+  }
 
   return (
     <PopupWithForm
@@ -18,7 +19,7 @@ function DeletePlacePopup({isOpen, card, onClose, onDelete, isRenderLoading} ) {
       onSubmit={handleSubmit}
       >
     </PopupWithForm>
-  )
+  );
 }
 
 export default DeletePlacePopup;
