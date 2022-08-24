@@ -24,7 +24,7 @@ function Main({
       <section className="elements-section">
         <ul className="elements">
            {cards.map((card) => (
-            < Card
+            <Card
               card={card}
               onCardClick={onCardClick}
               onCardLike={onCardLike}

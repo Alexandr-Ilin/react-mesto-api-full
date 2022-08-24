@@ -144,7 +144,7 @@ function App() {
       })
       .finally(() => {
         setRenderLoading(false);
-      })
+      });
   }
 
   function handleAddPlaceSubmit({ name, link }) {
@@ -166,7 +166,7 @@ function App() {
     setIsInfoToolTipPopupOpen({ isOpen: true, result });
   }
 
-  function handleRegister ({ email, password }) {
+  function handleRegister({ email, password }) {
     return auth.register({ password, email })
       .then(() => {
         history.push('/sign-in');
