@@ -1,12 +1,11 @@
 import React from 'react';
 
 // создаем отдельный компонент `Popup` для обертки любых попапов
-const Popup = ({
+function Popup({
   isOpen, name, onClose, children, container,
-}) => {
+}) {
   React.useEffect(() => {
     if (!isOpen) return;
-
     const closeByEscape = (e) => {
       if (e.key === 'Escape') {
         onClose();
@@ -21,19 +20,24 @@ const Popup = ({
     }
   };
   return (
-      <section
-        className={`popup ${isOpen ? 'popup_opened' : ''} popup_type_${name}`}
-        onClick={handleOverlay}
-      >
-        <div className={`popup__${container}`}>
-          {children}
-          <button
-            className='popup__close'
-            type='button'
-            onClick={onClose}
-          />
-        </div>
-      </section>
+    <section
+      role="button"
+      // tabIndex="1"
+      aria-hidden="true"
+      className={`popup ${isOpen ? 'popup_opened' : ''} popup_type_${name}`}
+      onClick={handleOverlay}
+      // onKeyDown={}
+    >
+      <div className={`popup__${container}`}>
+        {children}
+        <button
+          className="popup__close"
+          type="button"
+          onClick={onClose}
+          aria-label="Закрыть окно"
+        />
+      </div>
+    </section>
   );
-};
+}
 export default Popup;

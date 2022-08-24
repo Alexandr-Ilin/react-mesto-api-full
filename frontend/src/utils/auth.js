@@ -1,27 +1,27 @@
-import BASE_URL from "./consts";
+import BASE_URL from './consts';
 
 const checkResponse = (res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return res.json()
+  if (res.ok) {
+    return res.json();
+  }
+  return res.json()
     .then((err) => {
       throw err;
-    })
+    });
 }
 
-export const register = ({password, email}) => {
-  return fetch (`${BASE_URL}/signup`, {
+export const register = ({ password, email }) => {
+  return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     credentials: 'include',
     headers: {
       'Accept': 'application/json',
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({password, email})
+    body: JSON.stringify({ password, email }),
   })
-  .then(checkResponse)
-}
+    .then(checkResponse);
+};
 
 export const authorize = (password, email) => {
   return fetch(`${BASE_URL}/signin`, {
@@ -29,21 +29,21 @@ export const authorize = (password, email) => {
     credentials: 'include',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({password, email})
+    body: JSON.stringify({ password, email }),
   })
-  .then(checkResponse)
+    .then(checkResponse);
 };
 
-export const exitUserProfile = (token) => {
-  return fetch(`${BASE_URL}/exit`,{
+export const exitUserProfile = () => {
+  return fetch(`${BASE_URL}/exit`, {
     method: 'DELETE',
     credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-    }
+    },
   })
-  .then(checkResponse)
-}
+    .then(checkResponse);
+};

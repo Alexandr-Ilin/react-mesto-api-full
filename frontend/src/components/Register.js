@@ -24,30 +24,30 @@ function Register({ handleRegister }) {
   return (
     <section className="auth">
       <FormAuth
-        title={'Регистрация'}
+        title="Регистрация"
+        buttonText="Зарегистрироваться"
         onSubmit={handleSubmit}
-        buttonText={'Зарегистрироваться'}
       >
         <input
-          type='email'
-          name='email'
-          placeholder='Email'
+          type="email"
+          name="email"
+          placeholder="Email"
           value={formParams.email}
           onChange={handleChange}
           className="form-auth__input"
-          maxLength='40'
+          maxLength="40"
           required
         />
 
-      <input
-          type='password'
-          name='password'
-          placeholder='Пароль'
+        <input
+          type="password"
+          name="password"
+          placeholder="Пароль"
           value={formParams.password}
           onChange={handleChange}
           className="form-auth__input"
-          minLength= '5'
-          maxLength='10'
+          minLength="5"
+          maxLength="10"
           required
         />
 
