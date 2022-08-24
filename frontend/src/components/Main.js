@@ -1,10 +1,11 @@
-import React from 'react'
-import Card from '../components/Сard'
+import React from 'react';
+import Card from './Сard';
 import { CurrentUserContext } from '../context/CurrentUserContext';
 
-function Main({onAddPlace, onCardClick, onEditAvatar, onEditProfile, cards, onCardLike, onCardDelete}) {
+function Main({
+  onAddPlace, onCardClick, onEditAvatar, onEditProfile, cards, onCardLike, onCardDelete,
+}) {
   const currentUser = React.useContext(CurrentUserContext);
-    
   return (
     <main className="main-page">
       <section className="profile">
@@ -20,22 +21,21 @@ function Main({onAddPlace, onCardClick, onEditAvatar, onEditProfile, cards, onCa
         </div>
         <button className="profile__add-button" type="button" aria-label="Добавить фото" onClick={onAddPlace}></button>
       </section>
-    
       <section className="elements-section">
         <ul className="elements">
-           {cards.map(card => (
-            < Card 
-              card={card} 
+           {cards.map((card) => (
+            < Card
+              card={card}
               onCardClick={onCardClick}
               onCardLike={onCardLike}
               onCardDelete={onCardDelete}
               key={card._id}
             />
-          ))} 
+           ))}
         </ul>
       </section>
     </main>
-  )
+  );
 }
 
 export default Main;

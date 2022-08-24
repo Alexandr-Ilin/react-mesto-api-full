@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import FormAuth from "./FormAuth";
+import FormAuth from './FormAuth';
 
-function Login({handleLogin}) {
+function Login({ handleLogin }) {
   const [formParams, setFormParams] = React.useState({
     email: '',
     password: '',
-  })
+  });
 
   function handleSubmit(e) {
-    e.preventDefault()
-    handleLogin(formParams)
-  } 
+    e.preventDefault();
+    handleLogin(formParams);
+  }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -19,7 +19,7 @@ function Login({handleLogin}) {
       ...prev,
       [name]: value,
     }));
-  };
+  }
 
   return (
     <section className="auth">
@@ -28,7 +28,7 @@ function Login({handleLogin}) {
         onSubmit={handleSubmit}
         buttonText={'Войти'}
       >
-        <input 
+        <input
           type="email"
           name="email"
           placeholder="Email"
@@ -39,7 +39,7 @@ function Login({handleLogin}) {
           required
         />
 
-      <input 
+      <input
           type="password"
           name="password"
           placeholder="Пароль"
@@ -52,7 +52,7 @@ function Login({handleLogin}) {
         />
       </FormAuth>
     </section>
-  )
+  );
 }
 
 export default Login;
