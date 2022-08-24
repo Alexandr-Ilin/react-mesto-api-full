@@ -15,7 +15,7 @@ router.use('/users', userRouter);
 router.use('/cards', cardRouter);
 
 router.delete('/exit', (req, res) => {
-  res.clearCookie('jwt').send({message: "goodbye"});
+  res.clearCookie('jwt').send({ message: 'goodbye' });
 });
 
 router.use('*', (req, res, next) => {
