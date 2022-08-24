@@ -9,8 +9,6 @@ class Api {
     this._userUrl = `${this._baseUrl}/users/me`;
     this._avaUrl = `${this._baseUrl}/users/me/avatar`;
     this._cardsUrl = `${this._baseUrl}/cards`;
-    // this._likesUrl = `${this._baseUrl}/cards/likes`;
-    // this._likesUrl = `${this._cardsUrl}/${this._cardId}/likes`;
     this._headers = headers;
   }
 
@@ -100,19 +98,18 @@ class Api {
       .then(this._checkResponse);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Ошибка: ${res.status}`);
+    return Promise.reject(new Error(`Ошибка: ${res.status}`));
   }
 }
 
 const api = new Api({
-  // baseUrl: 'https://api.ilin.nomoredomains.sbs',
   baseUrl: BASE_URL,
   headers: {
-    // authorization: 'a251447a-ca8d-48d6-88cb-4cedc8f5baae',
     'Content-Type': 'application/json',
   },
 });

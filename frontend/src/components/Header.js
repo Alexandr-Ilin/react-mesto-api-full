@@ -1,6 +1,6 @@
 import React from 'react';
-import logoPath from '../images/logo1.svg';
 import { Link } from 'react-router-dom';
+import logoPath from '../images/logo1.svg';
 
 function Header({
   loggedIn, headerLinkPath, headerLinkText, email, buttonText, signOut,

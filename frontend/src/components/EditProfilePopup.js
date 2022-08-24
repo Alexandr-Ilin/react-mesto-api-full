@@ -35,7 +35,7 @@ function EditProfilePopup({
       buttonText={isRenderLoading ? 'Сохранение...' : 'Сохранить'}
       onSubmit={handleSubmit}>
       <input value={data.values.user || ''} onChange={data.handleChange} required minLength="2" maxLength="40" type="text" className="form__item form__item_type_name" name="user" placeholder="Имя"/>
-      <span className="form__error-message form__error-message_type_user"> </span>
+      <span className="form__error-message form__error-message_type_user"></span>
       <input value={data.values.character || ''} onChange={data.handleChange} required minLength="2" maxLength="200" type="text" className="form__item form__item_type_about" name="character" placeholder="О себе"/>
       <span className="form__error-message form__error-message_type_character"></span>
     </PopupWithForm>

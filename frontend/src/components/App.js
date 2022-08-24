@@ -31,7 +31,7 @@ function App() {
   const [renderLoading, setRenderLoading] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [email, setEmail] = React.useState('');
+  const [isEmail, setIsEmail] = React.useState('');
 
   const history = useHistory();
 
@@ -40,7 +40,7 @@ function App() {
       .then((res) => {
         setLoggedIn(true);
         setCurrentUser(res.data);
-        setEmail(res.data.email);
+        setIsEmail(res.data.email);
         history.push('/');
       })
       .catch((err) => {
@@ -106,7 +106,6 @@ function App() {
     setRenderLoading(true);
     api.chengeAvatar(avatar)
       .then((data) => {
-        console.log(data, 'avatar');
         setCurrentUser({ ...currentUser, avatar: data.data.avatar });
         closeAllPopups();
       })
@@ -124,7 +123,7 @@ function App() {
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+        setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
       })
       .catch((err) => {
         console.log(err);
@@ -135,7 +134,7 @@ function App() {
     setRenderLoading(true);
     api.deleteCard(card._id)
       .then(() => {
-        const newCards = cards.filter((itemCard) => itemCard._id === card._id ? false : true);
+        const newCards = cards.filter((itemCard) => (itemCard._id !== card._id && true));
         setCards(newCards);
         closeAllPopups();
       })
@@ -181,7 +180,7 @@ function App() {
   function handleLogin({ email, password }) {
     return auth.authorize(password, email)
       .then(() => {
-        setEmail(email);
+        setIsEmail(email);
         setLoggedIn(true);
         history.push('/');
       })
@@ -194,7 +193,7 @@ function App() {
     auth.exitUserProfile()
       .then(() => {
         setLoggedIn(false);
-        setEmail('');
+        setIsEmail('');
         history.push('/sign-in');
       })
       .catch((err) => {
@@ -237,7 +236,7 @@ function App() {
         >
           < Header
             loggedIn={loggedIn}
-            email={email}
+            email={isEmail}
             buttonText={'Выйти'}
             signOut={handleSignOut}
 

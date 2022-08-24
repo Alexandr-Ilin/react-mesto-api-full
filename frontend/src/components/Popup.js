@@ -12,6 +12,7 @@ function Popup({
       }
     };
     document.addEventListener('keydown', closeByEscape);
+    // eslint-disable-next-line consistent-return
     return () => document.removeEventListener('keydown', closeByEscape);
   }, [isOpen, onClose]);
   const handleOverlay = (e) => {
@@ -21,12 +22,8 @@ function Popup({
   };
   return (
     <section
-      role="button"
-      // tabIndex="1"
-      aria-hidden="true"
       className={`popup ${isOpen ? 'popup_opened' : ''} popup_type_${name}`}
       onClick={handleOverlay}
-      // onKeyDown={}
     >
       <div className={`popup__${container}`}>
         {children}
