@@ -26,8 +26,7 @@
   * Декларативный подход
   * JSX - верстка
   
-### Установка зависимостей и запуск приложения локально
-* Клонировать репозиторий `react-mesto-api-full`
-* Развернуть [Backend](https://github.com/Alexandr-Ilin/react-mesto-api-full/tree/main/backend)
+### Установка зависимостей и запуск Frontend-части локально
+* Клонировать папку `Frontend` репозитория `react-mesto-api-full`
 * `npm i` - установка зависимостей Frontend
 * `npm start` - запуск Frontend на http://localhost:3001/
